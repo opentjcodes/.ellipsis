@@ -1,0 +1,30 @@
+ellipsis:
+  kind: agent
+  name: generate-release-notes
+
+input:
+  json_schema:
+    type: object
+    properties:
+      repository: { type: string }
+      tag: { type: string }
+    required: [repository, tag]
+    additionalProperties: false
+  message: 'Write release notes for {{tag}} in {{repository}}.'
+
+session:
+  claude_code:
+    model: claude-opus-5-5
+    prompt: |
+      Find the pull requests merged since the previous tag. Group them
+      into breaking changes, features, and fixes, one line each with
+      its pull request link. Publish the notes to the tag's release.
+  environment: all-repositories
+  permissions:
+    github:
+      repositories: [A1, Aperture, Aperturev1, Aperturev2, Auxio, Call, Comet, Compiler, Editor, GPT-4-LLM, H1-Concept-by-TJ, HI-by-TJ, ICON, MyFirstApp, OpenBrowser, OpenMuse, Oracle-Eager, P2P, Pdf--viewer, ProjectVelo, Radio, ReadYou, Velo, Xcode, client-sdk-android, jiosaavn-api, mj_pdf, peer, peercall, search, simpleeditor]
+      permissions:
+        contents: write
+        pull_requests: read
+  budget:
+    session: 3
