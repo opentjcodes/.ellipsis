@@ -1,0 +1,41 @@
+ellipsis:
+  kind: environment
+  name: all-repositories
+
+repositories:
+  - name: A1
+  - name: Aperture
+  - name: Aperturev1
+  - name: Aperturev2
+  - name: Auxio
+  - name: Call
+  - name: Comet
+  - name: Compiler
+  - name: Editor
+  - name: GPT-4-LLM
+  - name: H1-Concept-by-TJ
+  - name: HI-by-TJ
+  - name: ICON
+  - name: MyFirstApp
+  - name: OpenBrowser
+  - name: OpenMuse
+  - name: Oracle-Eager
+  - name: P2P
+  - name: Pdf--viewer
+  - name: ProjectVelo
+  - name: Radio
+  - name: ReadYou
+  - name: Velo
+  - name: Xcode
+  - name: client-sdk-android
+  - name: jiosaavn-api
+  - name: mj_pdf
+  - name: peer
+  - name: peercall
+  - name: search
+  - name: simpleeditor
+
+compute:
+  cpu: 2
+  memory: 8GB
+  timeout: 30m
